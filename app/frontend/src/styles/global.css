@@ -1,0 +1,80 @@
+:root {
+  /* Color -- telemetry / mission-control palette, not the AI-default cream+serif
+     or black+single-neon look. Status color carries real meaning throughout. */
+  --bg-void: #0a0e12;
+  --bg-panel: #12181f;
+  --bg-panel-raised: #1a222b;
+  --line: #232c36;
+  --line-soft: #1a212a;
+
+  --text-primary: #e6edf3;
+  --text-muted: #7c8894;
+  --text-faint: #4c5761;
+
+  --teal: #2bd9a6;
+  --teal-dim: #16332c;
+  --amber: #f5a623;
+  --amber-dim: #3a2c12;
+  --red: #ff5d5d;
+  --red-dim: #3a1a1a;
+  --blue: #4c8dff;
+
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-void);
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--teal-dim);
+  color: var(--teal);
+}
+
+/* Respect reduced-motion preferences across the app */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
