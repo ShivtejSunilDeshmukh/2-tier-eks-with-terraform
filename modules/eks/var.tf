@@ -1,26 +1,26 @@
 variable "cluster_name" {
-description = "Name of the EKS cluster"
-type        = string
+  description = "Name of the EKS cluster"
+  type        = string
 }
 
 variable "cluster_version" {
-description = "Kubernetes version for the EKS cluster"
-type        = string
+  description = "Kubernetes version for the EKS cluster"
+  type        = string
 }
 
 variable "vpc_id" {
-description = "VPC ID where the EKS cluster is deployed"
-type        = string
+  description = "VPC ID where the EKS cluster is deployed"
+  type        = string
 }
 
 variable "private_subnet_ids" {
-description = "Private subnet IDs used by the EKS cluster"
-type        = list(string)
+  description = "Private subnet IDs used by the EKS cluster"
+  type        = list(string)
 }
 
 variable "cluster_role_arn" {
-description = "IAM role ARN for the EKS control plane"
-type        = string
+  description = "IAM role ARN for the EKS control plane"
+  type        = string
 }
 
 
